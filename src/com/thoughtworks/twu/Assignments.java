@@ -9,6 +9,7 @@ public class Assignments {
         assignments.verticalLine(3);
         assignments.rightTriangle(3);
         assignments.isoscelesTriangle(3);
+        assignments.diamond(8);
     }
 
     /**
@@ -75,6 +76,27 @@ public class Assignments {
                 System.out.print("*");
             }
             asterisks = asterisks + 2;
+            System.out.println();
+        }
+    }
+
+    /**
+     * Diamond.
+     * Given a number n, print a centered diamond.
+     *
+     * @param n the number of lines included the center of the diamond.
+     */
+    private void diamond(int n) {
+        isoscelesTriangle(n);
+        int asterisks = 2 * n - 3;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j < asterisks; j++) {
+                System.out.print("*");
+            }
+            asterisks = asterisks - 2;
             System.out.println();
         }
     }
