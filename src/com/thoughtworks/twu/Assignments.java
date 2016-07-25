@@ -10,7 +10,8 @@ public class Assignments {
         assignments.rightTriangle(3);
         assignments.isoscelesTriangle(3);
         assignments.diamond(3);
-        assignments.diamondWithName(5);
+        assignments.diamondWithName(3);
+        assignments.fizzBuzz();
     }
 
     /**
@@ -131,5 +132,27 @@ public class Assignments {
         }
         System.out.println("Xavier");
         upsideDownTriangle(n);
+    }
+
+    /**
+     * FizzBuzz Exercise
+     * FizzBuzz is a simple number game where you count, but say "Fizz" and/or "Buzz" instead of numbers.
+     * Rules:
+     * Instead of numbers divisible by three print "Fizz".
+     * Instead of numbers divisible by five print "Buzz".
+     * Instead of numbers divisible by three and five print "FizzBuzz".
+     */
+    private void fizzBuzz() {
+        for (int i = 1; i <= 100; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                System.out.println("FizzBuzz");
+            } else if (i % 3 == 0) {
+                System.out.println("Fizz");
+            } else if (i % 5 == 0) {
+                System.out.println("Buzz");
+            } else {
+                System.out.println(i);
+            }
+        }
     }
 }
