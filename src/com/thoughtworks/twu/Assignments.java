@@ -9,7 +9,8 @@ public class Assignments {
         assignments.verticalLine(3);
         assignments.rightTriangle(3);
         assignments.isoscelesTriangle(3);
-        assignments.diamond(8);
+        assignments.diamond(3);
+        assignments.diamondWithName(5);
     }
 
     /**
@@ -88,6 +89,15 @@ public class Assignments {
      */
     private void diamond(int n) {
         isoscelesTriangle(n);
+        upsideDownTriangle(n);
+    }
+
+    /**
+     * Prints an upside-down triangle to complete the diamond.
+     *
+     * @param n the number of lines minus 1.
+     */
+    private void upsideDownTriangle(int n) {
         int asterisks = 2 * n - 3;
         for (int i = 0; i < n; i++) {
             for (int j = 0; j <= i; j++) {
@@ -99,5 +109,27 @@ public class Assignments {
             asterisks = asterisks - 2;
             System.out.println();
         }
+    }
+
+    /**
+     * Diamond with Name.
+     * Given a number n, print a centered diamond with your name in place of the middle line.
+     *
+     * @param n the number of lines included the center of the diamond.
+     */
+    private void diamondWithName(int n) {
+        int asterisks = 1;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j < asterisks; j++) {
+                System.out.print("*");
+            }
+            asterisks = asterisks + 2;
+            System.out.println();
+        }
+        System.out.println("Xavier");
+        upsideDownTriangle(n);
     }
 }
