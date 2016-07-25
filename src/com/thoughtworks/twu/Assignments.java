@@ -1,5 +1,8 @@
 package com.thoughtworks.twu;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Assignments {
 
     public static void main(String[] args) {
@@ -12,6 +15,10 @@ public class Assignments {
         assignments.diamond(3);
         assignments.diamondWithName(3);
         assignments.fizzBuzz();
+        List<Integer> primeFactors = assignments.generate(1);
+        System.out.println(primeFactors);
+        primeFactors = assignments.generate(30);
+        System.out.println(primeFactors);
     }
 
     /**
@@ -135,7 +142,7 @@ public class Assignments {
     }
 
     /**
-     * FizzBuzz Exercise
+     * FizzBuzz.
      * FizzBuzz is a simple number game where you count, but say "Fizz" and/or "Buzz" instead of numbers.
      * Rules:
      * Instead of numbers divisible by three print "Fizz".
@@ -154,5 +161,25 @@ public class Assignments {
                 System.out.println(i);
             }
         }
+    }
+
+    /**
+     * Prime Factors.
+     *
+     * @param n the number to generate prime factors.
+     * @return a list of integers such that the numbers are the factors of N and are arranged in increasing numerical order.
+     */
+    private List<Integer> generate(int n) {
+        List<Integer> primeFactors = new ArrayList<>();
+        for (int i = 2; i <= n; i++) {
+            while (n % i == 0) {
+                primeFactors.add(i);
+                n = n / i;
+            }
+            if (n == 1) {
+                break;
+            }
+        }
+        return primeFactors;
     }
 }
