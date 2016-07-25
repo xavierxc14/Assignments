@@ -7,6 +7,7 @@ public class Assignments {
         assignments.asterisk();
         assignments.horizontalLine(8);
         assignments.verticalLine(3);
+        assignments.rightTriangle(3);
     }
 
     /**
@@ -32,13 +33,28 @@ public class Assignments {
 
     /**
      * Draw a vertical line.
-     * Given a number n, print n lines, each with one asterisks
+     * Given a number n, print n lines, each with one asterisks.
      *
      * @param n the number of lines to print.
      */
     private void verticalLine(int n) {
         for (int i = 0; i < n; i++) {
             System.out.println("*");
+        }
+    }
+
+    /**
+     * Draw a right triangle.
+     * Given a number n, print n lines, each with one more asterisk than the last.
+     *
+     * @param n the number of lines to print.
+     */
+    private void rightTriangle(int n) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
         }
     }
 }
