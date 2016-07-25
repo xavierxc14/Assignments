@@ -8,6 +8,7 @@ public class Assignments {
         assignments.horizontalLine(8);
         assignments.verticalLine(3);
         assignments.rightTriangle(3);
+        assignments.isoscelesTriangle(3);
     }
 
     /**
@@ -54,6 +55,26 @@ public class Assignments {
             for (int j = 0; j <= i; j++) {
                 System.out.print("*");
             }
+            System.out.println();
+        }
+    }
+
+    /**
+     * Isosceles Triangle.
+     * Given a number n, print a centered triangle.
+     *
+     * @param n the number of lines in the triangle.
+     */
+    private void isoscelesTriangle(int n) {
+        int asterisks = 1;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j < asterisks; j++) {
+                System.out.print("*");
+            }
+            asterisks = asterisks + 2;
             System.out.println();
         }
     }
